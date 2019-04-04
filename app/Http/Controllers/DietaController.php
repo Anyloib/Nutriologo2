@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Paciente;
 
 class DietaController extends Controller
 {
@@ -23,7 +24,10 @@ class DietaController extends Controller
      */
     public function create()
     {
-        return view('dietas.create');
+        $pacientes = Paciente::all();
+        $argumentos = array();
+        $argumentos['pacientes'] = $pacientes;
+        return view('dietas.create', $argumentos);
     }
 
     /**

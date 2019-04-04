@@ -17,6 +17,9 @@
                         <option selected disabled value="">
                             Eige un paciente
                         </option>
+                        @foreach($pacientes as$paciente)
+                            <option value="{{$paciente->id}}">{{$paciente->nombre . " " . $paciente->apellidos}}</option>
+                        @endforeach 
                     </select>
                 </div>
                 <div class="form-group">
